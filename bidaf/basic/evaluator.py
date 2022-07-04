@@ -70,7 +70,7 @@ class AccuracyEvaluation(LabeledEvaluation):
         super(AccuracyEvaluation, self).__init__(data_type, global_step, idxs, yp, y, tensor_dict=tensor_dict)
         self.loss = loss
         self.correct = correct
-        self.acc = sum(correct) / len(correct)
+        self.acc = np.mean(correct)
         self.dict['loss'] = loss
         self.dict['correct'] = correct
         self.dict['acc'] = self.acc
